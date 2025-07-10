@@ -7,12 +7,13 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 import java.util.*;
 
-@Entity
+
 @Data
 @Table(name = "cards")
+@Entity
 public class Card {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     UUID card_id;
 
     // Cart belongs to one shopper
@@ -21,8 +22,8 @@ public class Card {
     private User user;
 
     // List of cart items
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<CardItem> cartItems;
+    @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<CardItem> cardItems;
 
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

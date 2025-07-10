@@ -9,7 +9,7 @@ import java.util.UUID;
 @Table(name = "orderItems")
 public class OrderItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
 
     // The order this item belongs to

@@ -3,9 +3,9 @@ package com.Swaggy.Instamart.modal;
 import jakarta.persistence.*;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "warehouse_products")
-@Data
 public class WarehouseProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

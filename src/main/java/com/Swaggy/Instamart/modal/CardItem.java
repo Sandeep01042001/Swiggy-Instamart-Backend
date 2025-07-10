@@ -11,7 +11,7 @@ import java.util.UUID;
 @Table(name = "cardItems")
 public class CardItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
 
     // Belongs to one cart
