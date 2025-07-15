@@ -19,7 +19,7 @@ public class Card {
     // Cart belongs to one shopper
     @OneToOne
     @JoinColumn(name = "user_id", unique = true)
-    private User user;
+    User user;
 
     // List of cart items
     @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)

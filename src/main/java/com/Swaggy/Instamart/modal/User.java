@@ -5,6 +5,7 @@ import jdk.jfr.Enabled;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -18,10 +19,13 @@ public class User {
     @Column(unique = true, nullable = false)
     String email;
     String role;
+    String status;
     @Column(nullable = false)
     String password;
     @Column(unique = true, nullable = false)
     long phoneNumber;
+    @OneToMany
+    List<Location> locations;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 
