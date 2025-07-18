@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You're Invited to Join [[${platformName}]]</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: #f4f6f8;
+        color: #333333;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #004e92, #000428);
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .header h1 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .content {
+        padding: 30px 25px;
+    }
+
+    .content h2 {
+        color: #000000;
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .content p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555555;
+        margin: 10px 0;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 28px;
+        padding: 14px 28px;
+        background-color: #004e92;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #00336d;
+    }
+
+    .footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666666;
+        background-color: #f0f0f0;
+        border-top: 1px solid #dcdcdc;
+    }
+
+    @media (max-width: 600px) {
+        .content, .header {
+            padding: 20px;
+        }
+
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>Welcome to [[${platformName}]]</h1>
+  </div>
+  <div class="content">
+    <h2>Hello [[${warehouseAdminName}]],</h2>
+    <p>
+      You've been invited to join our logistics & grocery platform as a <strong>Warehouse Admin</strong>.
+    </p>
+    <p>
+      We’re glad to have you with us. To get started, click the button below to accept your invitation.
+    </p>
+
+    <form th:action="@{${acceptLink}}" method="put">
+      <button type="submit" class="btn">Accept Invitation</button>
+    </form>
+
+    <p style="margin-top: 30px;">
+      If you didn’t request this or need help, feel free to contact our support team.
+    </p>
+
+    <p style="margin-top: 20px;">
+      — [[${platformName}]] Team
+    </p>
+  </div>
+  <div class="footer">
+    &copy; 2025 [[${platformName}]]. All rights reserved.
+  </div>
+</div>
+
+</body>
+</html>
